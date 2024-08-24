@@ -57,6 +57,7 @@ describe('Carousel', () => {
     it('should correctly loop through all slides', () => {
         expect(carousel.currentIndex).toBe(0)  // 初始状态
 
+        // 测试 next 方向
         carousel.next()
         expect(carousel.currentIndex).toBe(1)  // 移动到第二张
 
@@ -68,5 +69,18 @@ describe('Carousel', () => {
 
         carousel.next()
         expect(carousel.currentIndex).toBe(1)  // 再次移动到第二张
+
+        // 测试 prev 方向
+        carousel.prev()
+        expect(carousel.currentIndex).toBe(0)
+
+        carousel.prev()
+        expect(carousel.currentIndex).toBe(2)
+
+        carousel.prev()
+        expect(carousel.currentIndex).toBe(1)
+
+        carousel.prev()
+        expect(carousel.currentIndex).toBe(0)
     })
 })
