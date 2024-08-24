@@ -1,0 +1,36 @@
+{
+  "name": "next-carousel",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./dist/carousel.umd.js",
+  "module": "./dist/carousel.esm.js",
+  "types": "./dist/carousel.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/carousel.esm.js",
+      "require": "./dist/carousel.umd.js"
+    },
+    "./styles": "./dist/carousel.css",
+    "./styles/carousel.css": "./dist/carousel.css"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "test": "vitest",
+    "build": "vite build",
+    "preview": "vite preview",
+    "dev": "vite"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@testing-library/dom": "^10.4.0",
+    "jsdom": "^24.1.1",
+    "typescript": "^5.5.4",
+    "vite": "^5.4.2",
+    "vite-plugin-dts": "^4.0.3",
+    "vitest": "^2.0.5"
+  }
+}
