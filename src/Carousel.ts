@@ -31,10 +31,11 @@ export class Carousel {
      * 初始化轮播图容器样式
      */
     private init() {
+        // TODO: 添加样式
         this.element.style.position = 'relative';
         this.element.style.overflow = 'hidden';
-        this.element.style.width = '100%';
-        this.element.style.height = '100%';
+        this.element.style.width = '200px';
+        this.element.style.height = '100px';
     }
 
     /**

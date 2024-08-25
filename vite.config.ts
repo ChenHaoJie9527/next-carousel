@@ -23,4 +23,7 @@ export default defineConfig({
         globals: true,
         environment: 'jsdom',
     },
+    server: {
+        open: '/examples/index.html'
+    }
 });
