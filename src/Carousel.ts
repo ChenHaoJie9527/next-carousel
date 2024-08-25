@@ -23,6 +23,7 @@ export class Carousel {
             ...this.getDefaultOptions(),
             ...options
         };
+        // console.log('Carousel initialized with options:', this.options);
         this.items = Array.from(this.element.querySelectorAll('.carousel-item'));
         this.init();
     }
@@ -36,6 +37,7 @@ export class Carousel {
         this.element.style.overflow = 'hidden';
         this.element.style.width = '200px';
         this.element.style.height = '100px';
+        this.setupEventListeners()
     }
 
     /**
