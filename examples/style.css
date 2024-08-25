@@ -9,6 +9,7 @@
 .carousel-container {
     width: 100%;
     height: 100%;
+    position: relative;
 }
 
 .carousel-item {
@@ -16,15 +17,26 @@
     width: 100%;
     height: 100%;
     background-color: #ccc;
-    display: flex;
+    /* display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center; */
     font-size: 20px;
     left: 0;
     top: 0; 
     transition: all 0.5s ease;
     z-index: 1;
 }
+.carousel-item:first-child {
+    background-color: red;
+}
+.carousel-item:nth-child(2) {
+    background-color: blue;
+}
+.carousel-item:nth-child(3) {
+    background-color: green;
+}
+
+
 .prev, .next {
     position: absolute;
     top: 50%;

@@ -23,8 +23,11 @@ export class Carousel {
             ...this.getDefaultOptions(),
             ...options
         };
-        // console.log('Carousel initialized with options:', this.options);
+        // 使用 defaultCurrentIndex，如果没有提供则默认为 0
+        this.currentIndex = this.options.defaultCurrentIndex ?? 0;
         this.items = Array.from(this.element.querySelectorAll('.carousel-item'));
+        // 确保 currentIndex 在有效范围内
+        this.currentIndex = Math.max(0, Math.min(this.currentIndex, this.items.length - 1));
         this.init();
     }
 
@@ -35,9 +38,8 @@ export class Carousel {
         // TODO: 添加样式
         this.element.style.position = 'relative';
         this.element.style.overflow = 'hidden';
-        this.element.style.width = '200px';
-        this.element.style.height = '100px';
         this.setupEventListeners()
+        this.updateSlides()
     }
 
     /**
@@ -101,16 +103,19 @@ export class Carousel {
         this.currentIndex = index;
         this.updateSlides();
     }
-    
+
 
     /**
      * 更新幻灯片的显示状态
      */
     private updateSlides() {
         this.items.forEach((item, index) => {
-            const offset = index - this.currentIndex;
-            const isVisible = offset >= 0 && offset < this.options.slidesToShow!;
-            item.style.display = isVisible ? 'block' : 'none';
+            if (index === this.currentIndex) {
+                item.style.display = 'block';
+                console.log(`Showing item at index ${index}`);
+            } else {
+                item.style.display = 'none';
+            }
         });
     }
 

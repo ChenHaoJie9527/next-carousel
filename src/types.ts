@@ -37,4 +37,6 @@ export interface CarouselOptions {
     mouseEnabled?: boolean;
     // 是否启用键盘滑动
     keyboardEnabled?: boolean;
+    // 默认显示的幻灯片索引
+    defaultCurrentIndex?: number;
 }
