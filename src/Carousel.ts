@@ -40,6 +40,9 @@ export class Carousel {
         this.element.style.overflow = 'hidden';
         this.setupEventListeners()
         this.updateSlides()
+        if (this.options.autoPlay) {
+            this.startAutoPlay()
+        }
     }
 
     /**
